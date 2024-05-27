@@ -55,8 +55,12 @@ def print_predictions(y_test, y_pred, num_predictions=10):
         print(f"Actual: {y_test.iloc[i]}")
         print(f"Predicted: {y_pred[i]}")
         print("")
-import matplotlib.pyplot as plt
 
+# ------------------------------------------------------------------------------------------
+# PURELY OPTION -> Plot the actual and predicted labels for the first num_predictions samples.
+# ------------------------------------------------------------------------------------------
+
+import matplotlib.pyplot as plt
 def plot_predictions(y_test, y_pred, num_predictions=10):
     """
     Plot the actual and predicted labels for the first num_predictions samples.
@@ -82,6 +86,7 @@ def plot_predictions(y_test, y_pred, num_predictions=10):
     fig.tight_layout()
 
     plt.show()
+
 
 def main():
     df, labels = read_data('news.csv')
