@@ -26,3 +26,10 @@ pac=PassiveAggressiveClassifier(max_iter=50)
 #Train the Model
 pac.fit(tfidf_train,y_train)
 
+# Predict on the test set and calculate accuracy
+y_pred=pac.predict(tfidf_test)
+score=accuracy_score(y_test,y_pred)
+print(f'Accuracy: {round(score*100,2)}%')
+
+# Print Confusion Matrix
+confusion_matrix(y_test, y_pred, labels=['FAKE', 'REAL'])
